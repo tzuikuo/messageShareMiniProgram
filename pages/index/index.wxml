@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<!--页面的实现，相当于html-->
+<view class="msg-box">
+  <!--留言区-->
+  <view class="send-box">
+    <input value='{{inputString}}' bindinput='changeInputVal' class="input" type="text" placeholder='请输入内容...' placeholder-class='place-input' />
+    <button size='mini' type="primary" bindtap='addMsg'>发布</button><!--bindtap相当于onclick-->
+  </view>
+  <text class="msg-info" wx:if="{{msgHistory.length==0}}">......</text> <!--当留言列表为空时显示本句-->
+  <!--留言列表 -->
+  <view class="list-view">
+    <view class="item font-break" wx:for="{{msgShow}}" wx:key="{{index}}"><!--循环显示msgHistory中的数据，key是必须的，否则会出现警告-->
+      <text class='text1'>{{item.message}}</text> <!--item是固定的，message对应msgShow中的名-->
+      <text class='text2'>{{item.forwardTime}}</text> <!--item是固定的，message对应msgShow中的名-->
+      <icon data-index="{{index}}" class="close-btn" bindtap='deleMsg' type="cancel"></icon>
+      
+    </view>
+    
+  </view> 
+  <view class="send-box">
+    <button size='mini' type="primary" bindtap='lastPage'>上一页</button><!--bindtap相当于onclick-->
+    <text>第{{curPage}}页，共{{totalCurPage}}页</text>
+    <button size='mini' type="primary" bindtap='nextPage'>下一页</button><!--bindtap相当于onclick-->
+  </view>
+</view>
