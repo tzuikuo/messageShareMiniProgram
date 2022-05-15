@@ -6,4 +6,4 @@ messageShareMiniProgram
 
 代码参考了：https://www.cnblogs.com/hsccxt/p/10396712.html
 
-![image]https://github.com/tzuikuo/messageShareMiniProgram/blob/master/pic/QRcode.png
+![image](https://github.com/tzuikuo/messageShareMiniProgram/blob/master/pic/QRcode.png)
